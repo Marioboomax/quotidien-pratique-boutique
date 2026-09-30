@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quotidien Pratique — Bons plans</title>
+<meta name="description" content="Selection quotidienne de produits utiles et bien notes, trouves sur Amazon et AliExpress.">
+<meta property="og:title" content="Quotidien Pratique — Bons plans">
+<meta property="og:description" content="Selection quotidienne de produits utiles et bien notes.">
+<meta property="og:image" content="https://sylbshsqffsxbrlgglpb.supabase.co/storage/v1/object/public/produits-media/boutique/photos/amazon-cofit-gants-de-moto-gants-ea-eecran-tactile-plein-doigt-pour-la-course.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b45f04'/%3E%3Ctext x='32' y='43' font-family='Segoe UI,Arial,sans-serif' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3EQP%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f8f7f4; --card:#ffffff; --text:#1c1b18; --muted:#6f6c63; --border:#e8e6df;
+  --accent:#d97706; --accent-btn:#b45f04; --amazon:#ff9900; --ali:#e62e04;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#15140f; --card:#201f1a; --text:#f3f1ea; --muted:#a29d8f; --border:#332f26; }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+header{
+  position:sticky; top:0; z-index:10; background:var(--bg);
+  border-bottom:1px solid var(--border); backdrop-filter:blur(8px);
+  padding:16px 16px 14px;
+}
+.header-inner{max-width:1280px; margin:0 auto;}
+.brand{display:flex; align-items:center; gap:10px; margin-bottom:4px;}
+.monogram{
+  width:36px; height:36px; border-radius:10px; background:var(--accent-btn);
+  color:#fff; display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-size:.95rem; flex-shrink:0;
+}
+.brand h1{font-size:clamp(1.3rem,1rem+1.2vw,1.7rem); margin:0; font-weight:800;}
+.tagline{color:var(--muted); font-size:.9rem; margin:0 0 14px;}
+.search-row{display:flex; gap:8px; flex-wrap:wrap;}
+#search{
+  flex:1 1 220px; padding:11px 16px; border-radius:999px; border:1px solid var(--border);
+  background:var(--card); color:var(--text); font-size:.95rem; outline:none;
+}
+#search:focus{border-color:var(--accent);}
+.chips{display:flex; gap:6px; flex-wrap:wrap;}
+.chip{
+  padding:9px 14px; border-radius:999px; border:1px solid var(--border);
+  background:var(--card); color:var(--text); font-size:.85rem; cursor:pointer;
+  font-weight:600; white-space:nowrap;
+}
+.chip.active{background:var(--accent-btn); border-color:var(--accent-btn); color:#fff;}
+.meta-row{display:flex; justify-content:space-between; align-items:center; margin-top:10px; font-size:.82rem; color:var(--muted);}
+
+main{max-width:1280px; margin:0 auto; padding:20px 16px 60px;}
+#grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px;
+}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:16px; overflow:hidden;
+  display:flex; flex-direction:column; box-shadow:0 1px 2px rgba(0,0,0,.04);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.card:hover{transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,.08);}
+.card img{width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:var(--border);}
+.card-body{padding:14px 14px 16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+.badge{
+  display:inline-block; font-size:.68rem; font-weight:700; color:#fff; padding:3px 9px;
+  border-radius:999px; width:fit-content; letter-spacing:.02em;
+}
+.badge.amazon{background:var(--amazon);}
+.badge.ali{background:var(--ali);}
+.card h3{
+  font-size:.95rem; font-weight:600; margin:0; line-height:1.3;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.5em;
+}
+.rating{font-size:.82rem; color:var(--muted);}
+.price{font-size:1.15rem; font-weight:700; margin-top:auto;}
+.cta{
+  display:block; text-align:center; background:var(--accent-btn); color:#fff; text-decoration:none;
+  padding:11px; border-radius:10px; font-weight:700; font-size:.9rem; margin-top:4px;
+}
+.cta:active{opacity:.85;}
+.disclosure{font-size:.68rem; color:var(--muted); text-align:center; margin-top:2px;}
+
+#empty{display:none; text-align:center; padding:60px 20px; color:var(--muted);}
+#empty a{color:var(--accent-btn);}
+
+footer{
+  max-width:1280px; margin:0 auto; padding:30px 16px 50px; color:var(--muted); font-size:.8rem;
+  border-top:1px solid var(--border); line-height:1.6;
+}
+footer a{color:var(--accent-btn);}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="monogram">QP</div>
+      <h1>Quotidien Pratique</h1>
+    </div>
+    <p class="tagline">Des objets qui simplifient la vie, trouves et testes chaque jour.</p>
+    <div class="search-row">
+      <input id="search" type="text" placeholder="Rechercher un produit... (ex: casque, sac, chargeur)">
+      <div class="chips">
+        <button class="chip active" data-site="Tous">Tous</button>
+        <button class="chip" data-site="Amazon">Amazon</button>
+        <button class="chip" data-site="AliExpress">AliExpress</button>
+      </div>
+    </div>
+    <div class="meta-row"><span id="count"></span></div>
+  </div>
+</header>
+<main>
+  <div id="grid"></div>
+  <div id="empty">Aucun produit ne correspond a votre recherche. <a href="#" id="reset">Reinitialiser</a></div>
+</main>
+<footer>
+  <strong>Quotidien Pratique</strong> selectionne chaque jour des produits utiles et bien notes sur Amazon et AliExpress.
+  Les liens de cette page sont des <strong>liens affilies</strong> : en tant que Partenaire, nous pouvons percevoir une commission
+  sur les achats remplissant les conditions requises, sans surcout pour vous.<br>
+  Retrouvez-nous sur <a href="https://www.facebook.com/profile.php?id=61561154467542" target="_blank" rel="noopener">Facebook</a>
+  et <a href="https://x.com/quotidienpratiq" target="_blank" rel="noopener">X</a>.
+</footer>
+<script>
+const PRODUITS = [{"id": "amazon-cofit-gants-de-moto-gants-ea-eecran-tactile-plein-doigt-pour-la-course", "site": "Amazon", "nom": "COFIT Gants de Moto, Gants à Écran Tactile Plein Doigt pour la Course de Moto, VTT, Escalade, Chasse, Motocross et Autres Sports de Plein Air", "prix": "17,99 EUR", "note": 4.4, "avis_ventes": "61 757 avis", "photo": "https://sylbshsqffsxbrlgglpb.supabase.co/storage/v1/object/public/produits-media/boutique/photos/amazon-cofit-gants-de-moto-gants-ea-eecran-tactile-plein-doigt-pour-la-course.jpg", "lien_affiliation": "https://link.amazon/B01SIGHyo", "categorie": "Auto et Moto"}, {"id": "amazon-amazon-basics-ea-deejections-canines-avec-distributeur-et-clip-pour-la", "site": "Amazon", "nom": "Amazon Basics à déjections canines avec distributeur et clip pour laisse, Sans parfum, lot de 300 sacs, 20 lot de 15", "prix": "11,17 EUR", "note": 4.8, "avis_ventes": "234 443 avis", "photo": "https://sylbshsqffsxbrlgglpb.supabase.co/storage/v1/object/public/produits-media/boutique/photos/amazon-amazon-basics-ea-deejections-canines-avec-distributeur-et-clip-pour-la.jpg", "lien_affiliation": "https://link.amazon/B07VvEvUn", "categorie": "Animalerie"}];
+
+const grid = document.getElementById('grid');
+const empty = document.getElementById('empty');
+const countEl = document.getElementById('count');
+const searchEl = document.getElementById('search');
+const chips = document.querySelectorAll('.chip');
+let activeSite = 'Tous';
+
+function normalize(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function render(list){
+  grid.innerHTML = list.map(p => `
+    <div class="card">
+      <img src="${p.photo}" alt="${p.nom.replace(/"/g,'&quot;')}" loading="lazy">
+      <div class="card-body">
+        <span class="badge ${p.site === 'Amazon' ? 'amazon' : 'ali'}">${p.site}</span>
+        <h3>${p.nom}</h3>
+        <div class="rating">${p.note ? '★ ' + p.note + '/5' : ''}${p.avis_ventes ? ' · ' + p.avis_ventes : ''}</div>
+        <div class="price">${p.prix}</div>
+        <a class="cta" href="${p.lien_affiliation}" target="_blank" rel="nofollow sponsored noopener">Voir l'offre →</a>
+        <div class="disclosure">Lien affilie · une commission peut etre percue</div>
+      </div>
+    </div>
+  `).join('');
+  countEl.textContent = list.length + (list.length > 1 ? ' produits' : ' produit');
+  empty.style.display = list.length ? 'none' : 'block';
+  grid.style.display = list.length ? 'grid' : 'none';
+}
+
+function applyFilters(){
+  const q = normalize(searchEl.value);
+  const filtered = PRODUITS.filter(p =>
+    (activeSite === 'Tous' || p.site === activeSite) &&
+    (!q || normalize(p.nom).includes(q))
+  );
+  render(filtered);
+}
+
+searchEl.addEventListener('input', applyFilters);
+chips.forEach(chip => chip.addEventListener('click', () => {
+  chips.forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  activeSite = chip.dataset.site;
+  applyFilters();
+}));
+document.getElementById('reset').addEventListener('click', (e) => {
+  e.preventDefault();
+  searchEl.value = '';
+  chips.forEach(c => c.classList.remove('active'));
+  chips[0].classList.add('active');
+  activeSite = 'Tous';
+  applyFilters();
+});
+
+render(PRODUITS);
+</script>
+</body>
+</html>
