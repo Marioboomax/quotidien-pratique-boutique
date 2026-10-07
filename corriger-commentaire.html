@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corriger le commentaire — Quotidien Pratique</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#f6f5f2; --surface:#ffffff; --border:#e4e1d9; --text:#1c1b18; --muted:#6b675d;
+    --fb:#1877f2; --fb-hover:#1461c7; --ok:#1f8a70; --code-bg:#f0eee8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17160f; --surface:#211f17; --border:#39362a; --text:#efece2; --muted:#a39d8c;
+      --fb:#5b9bf8; --fb-hover:#7bb0fa; --ok:#6fcfaf; --code-bg:#2a2719; color-scheme:dark;
+    }
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg); color:var(--text); margin:0; font-family:'Public Sans',-apple-system,sans-serif; padding:16px; display:flex; justify-content:center}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; max-width:520px; width:100%; margin-top:40px}
+  h1{font-family:'Fraunces',Georgia,serif; font-size:1.4rem; font-weight:700; margin:0 0 6px}
+  .produit{color:var(--muted); font-size:0.95rem; margin:0 0 20px}
+  .label{font-size:0.85rem; font-weight:600; color:var(--muted); margin:0 0 8px}
+  .commentaire{background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:14px; font-family:ui-monospace,Consolas,monospace; font-size:0.9rem; line-height:1.5; white-space:pre-wrap; word-break:break-word; user-select:all; margin:0 0 20px}
+  .actions{display:flex; flex-direction:column; gap:10px}
+  button, a.btn{display:block; width:100%; text-align:center; padding:12px; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; border:none; cursor:pointer; font-family:inherit}
+  #copier{background:var(--text); color:var(--bg)}
+  #copier.copied{background:var(--ok); color:#fff}
+  a.btn{background:var(--fb); color:#fff}
+  a.btn:hover{background:var(--fb-hover)}
+  .erreur{color:var(--muted); font-size:0.9rem}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Corriger le commentaire</h1>
+  <p class="produit" id="produit"></p>
+  <div id="contenu"></div>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const commentaire = params.get('commentaire');
+  const facebook = params.get('facebook');
+  const produit = params.get('produit');
+  const contenu = document.getElementById('contenu');
+  const produitEl = document.getElementById('produit');
+
+  if (produit) produitEl.textContent = produit;
+
+  if (!commentaire) {
+    contenu.innerHTML = '<p class="erreur">Aucun commentaire fourni dans le lien.</p>';
+  } else {
+    const pre = document.createElement('div');
+    pre.className = 'commentaire';
+    pre.textContent = commentaire;
+    contenu.appendChild(pre);
+
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+
+    const copierBtn = document.createElement('button');
+    copierBtn.id = 'copier';
+    copierBtn.textContent = 'Copier le commentaire';
+    copierBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(commentaire);
+        copierBtn.textContent = 'Copié !';
+        copierBtn.classList.add('copied');
+        setTimeout(() => {
+          copierBtn.textContent = 'Copier le commentaire';
+          copierBtn.classList.remove('copied');
+        }, 2000);
+      } catch (e) {
+        copierBtn.textContent = 'Copie impossible — selectionnez le texte manuellement';
+      }
+    });
+    actions.appendChild(copierBtn);
+
+    if (facebook) {
+      const fbLink = document.createElement('a');
+      fbLink.className = 'btn';
+      fbLink.href = facebook;
+      fbLink.target = '_blank';
+      fbLink.rel = 'noopener';
+      fbLink.textContent = 'Ouvrir la publication Facebook';
+      actions.appendChild(fbLink);
+    }
+
+    contenu.appendChild(actions);
+  }
+</script>
+</body>
+</html>
